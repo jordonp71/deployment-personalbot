@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+</head>
+  <body>
+    <!-- Widget Configuration -->
+    <script>
+        window.ChatWidgetConfig = {
+            webhook: {
+                url: '/.netlify/functions/n8n-proxy',
+                route: 'general'
+            },
+            branding: {
+                
+                name: 'Jordon Peters', // Your company name
+                welcomeText: 'Click more to learn about Jordon', //Welcome message
+                responseTimeText: 'We typically respond right away',
+                poweredBy: {
+                    text: 'Powered by North Agent',
+                    link: 'https://northagent.io'
+                } 
+            },
+            style: {
+                primaryColor: '#854fff', //Primary color
+                secondaryColor: '#6b3fd4', //Secondary color
+                position: 'right', //Position of the widget (left or right)
+                backgroundColor: '#f5f5f5', //Background color of the chat widget
+                fontColor: '#333333' //Text color for messages and interface
+              
+            }
+        };
+        window.addEventListener("load", () => {
+    const style = document.createElement("style");
+    style.innerHTML = `
+      .chat-widget-header img {
+        width: 90px !important;   /* increase/decrease as needed */
+        height: auto !important;
+      }
+    `;
+    document.head.appendChild(style);
+  });
+    </script>
+    <script src="chat-widget2.js"></script>
+</body>
+
+    <!-- Widget Script -->
+</html>  
